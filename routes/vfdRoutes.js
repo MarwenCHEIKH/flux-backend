@@ -22,14 +22,14 @@ router.post("/create-directory", async (req, res) => {
     );
     res.send(commandString);
 
-    // await service.connect(serverConfig);
-    // await service.executeCommand(commandString);
+    await service.connect(serverConfig);
+    await service.executeCommand(commandString);
     res.status(200).json({ message: "Command executed successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
-  } // finally {
-  //     service.closeConnection();
-  //   }
+  } finally {
+    service.closeConnection();
+  }
 });
 router.post("/update-directory", async (req, res) => {
   const formDataObject = req.body;
@@ -43,14 +43,14 @@ router.post("/update-directory", async (req, res) => {
     );
     res.send(commandString);
 
-    // await service.connect(serverConfig);
-    // await service.executeCommand(commandString);
+    await service.connect(serverConfig);
+    await service.executeCommand(commandString);
     res.status(200).json({ message: "Command executed successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
-  } //finally {
-  //     service.closeConnection();
-  //   }
+  } finally {
+    service.closeConnection();
+  }
 });
 router.post("/move-directory", async (req, res) => {
   const formDataObject = req.body;
@@ -64,15 +64,14 @@ router.post("/move-directory", async (req, res) => {
     );
     res.send(commandString);
 
-    // await service.connect(serverConfig);
-    // await service.executeCommand(commandString);
+    await service.connect(serverConfig);
+    await service.executeCommand(commandString);
     res.status(200).json({ message: "Command executed successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  } finally {
+    service.closeConnection();
   }
-  //   finally {
-  //     service.closeConnection();
-  //   }
 });
 router.post("/delete-directory", async (req, res) => {
   const formDataObject = req.body;
@@ -86,14 +85,13 @@ router.post("/delete-directory", async (req, res) => {
     );
     res.send(commandString);
 
-    // await service.connect(serverConfig);
-    // await service.executeCommand(commandString);
+    await service.connect(serverConfig);
+    await service.executeCommand(commandString);
     res.status(200).json({ message: "Command executed successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  } finally {
+    service.closeConnection();
   }
-  //   finally {
-  //     service.closeConnection();
-  //   }
 });
 module.exports = router;

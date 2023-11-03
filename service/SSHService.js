@@ -73,7 +73,7 @@ class SSHService {
     const parsedData = [];
 
     for (const line of lines) {
-      const trimmedLine = line.trim(); // Use a different variable name here
+      const trimmedLine = line.trim();
       if (trimmedLine) {
         parsedData.push(trimmedLine.split(/\s+/));
       }
